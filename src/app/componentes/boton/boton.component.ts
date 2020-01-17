@@ -18,7 +18,7 @@ export class BotonComponent implements OnInit {
   ngOnInit() {
   }
 
-  pulsado() {
+  pulsado  = () => {
     this.numero += this.incremento;
     if(this.numero == 0) {
       this.incremento = 1;
