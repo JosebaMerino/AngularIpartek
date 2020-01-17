@@ -84,9 +84,23 @@ export class AppComponent {
   }
   ];
   pSeleccionado = this.productos[0];
+  carro = new Map();
 
   productoSeleccionado = (producto) => {
     console.trace(producto);
     this.pSeleccionado = producto;
   }
+
+  anadirCarro(producto) {
+    let id = producto.id;
+    if(this.carro.has(id)) {
+      let p = this.carro.get(id);
+      p.cantidad++;
+      this.carro.set(id, p);
+    } else {
+      this.carro.set(id, {cantidad: 1, idProducto: id});
+    }
+    console.trace(this.carro)
+  }
+
 }

@@ -5,13 +5,16 @@
   {{ productos | json }}
 </p>
 <app-boton></app-boton>
+<p>
+{{ carro.entries | json }}
 
+</p>
 <div class="container">
   <div class="row border">
     <div class="col">
       <ul class="list-group">
         <li *ngFor="let p of productos" (click) = "productoSeleccionado(p)" class="list-group-item {{ (p.id == pSeleccionado.id)? 'active' : ''}}">
-          <span> {{ p.nombre }} </span>
+          <span> {{ p.nombre }}  </span>
         </li>
       </ul>
     </div> <!-- .col -->
@@ -22,7 +25,6 @@
           <span *ngIf="!pSeleccionado.gluten" class="badge badge-pill badge-success">Sin gluten</span>
         </li>
         <li>
-
           <img src="{{ pSeleccionado.imagen }}" alt="">
         </li>
         <li>
@@ -38,6 +40,9 @@
               {{ h.fecha }} : {{ h.precio }}
             </li>
           </ul>
+        </li>
+        <li>
+          <button class="btn btn-primary" (click) = "anadirCarro(pSeleccionado)"></button>
         </li>
       </ul>
     </div>
