@@ -1,2 +1,45 @@
 <h1>Welcome to the hell</h1>
 <h2> {{ title | uppercase }} </h2>
+
+<p>
+  {{ productos | json }}
+</p>
+
+
+<div class="container">
+  <div class="row border">
+    <div class="col">
+      <ul class="list-group">
+        <li *ngFor="let p of productos" (click) = "productoSeleccionado(p)" class="list-group-item {{ (p.id == pSeleccionado.id)? 'active' : ''}}">
+          <span> {{ p.nombre }} </span>
+        </li>
+      </ul>
+    </div> <!-- .col -->
+    <div class="col">
+      <ul>
+        <li>
+          <span *ngIf="pSeleccionado.gluten" class="badge badge-pill badge-warning">Con gluten</span>
+          <span *ngIf="!pSeleccionado.gluten" class="badge badge-pill badge-success">Sin gluten</span>
+        </li>
+        <li>
+
+          <img src="{{ pSeleccionado.imagen }}" alt="">
+        </li>
+        <li>
+          {{ pSeleccionado.nombre }}
+        </li>
+        <li>
+          {{ pSeleccionado.categoria.nombre }}
+        </li>
+        <li>
+          Historico de precios:
+          <ul>
+            <li *ngFor="let h of pSeleccionado.historico">
+              {{ h.fecha }} : {{ h.precio }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div> <!-- .row-->
+</div> <!-- .container -->
