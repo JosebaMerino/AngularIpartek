@@ -100,7 +100,7 @@ export class AppComponent {
     } else {
       this.carro.set(id, 1);
     }
-    console.trace(this.carro)
+    console.trace(this.carro);
   }
 
   getCarro() {
@@ -112,4 +112,13 @@ export class AppComponent {
     return arrayCarro;
   }
 
+  getProducto(id: number) {
+    let producto;
+    this.productos.forEach(element => {
+      if (element.id === id) {
+        producto = element;
+      }
+    });
+    return producto;
+  }
 }

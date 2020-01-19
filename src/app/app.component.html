@@ -6,11 +6,11 @@
 </p>
 <app-boton></app-boton>
 <p>
-{{ carro.entries | json }}
-
-{{ this.getCarro() | json }}
 
 </p>
+<ul>
+  <li *ngFor="let c of this.getCarro()"> {{ getProducto(c[1]).nombre }} : {{ c[2] }}</li>
+</ul>
 <div class="container">
   <div class="row">
     <div class="col-6 p-0">
