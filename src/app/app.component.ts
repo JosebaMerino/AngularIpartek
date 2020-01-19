@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Producto } from './modules/Producto';
+
 // componenete principal que se carga al arrancar la app
 
 
@@ -16,7 +18,7 @@ styleUrls:  Estilo para la vista formato SCSS
 export class AppComponent {
   // variable
   title = 'my-app';
-  productos = [{
+  productos: Producto[] = [{
     "id": 34,
     "nombre": "cafe",
     "imagen": "https://www.stickpng.com/assets/images/580b57fbd9996e24bc43c0f0.png",
@@ -84,7 +86,7 @@ export class AppComponent {
   }
   ];
   pSeleccionado = this.productos[0];
-  carro = new Map();
+  carro = new Map<number, number>();
 
   productoSeleccionado = (producto) => {
     console.trace(producto);
@@ -113,7 +115,7 @@ export class AppComponent {
   }
 
   getProducto(id: number) {
-    let producto;
+    let producto: Producto;
     this.productos.forEach(element => {
       if (element.id === id) {
         producto = element;
