@@ -94,13 +94,22 @@ export class AppComponent {
   anadirCarro(producto) {
     let id = producto.id;
     if(this.carro.has(id)) {
-      let p = this.carro.get(id);
-      p.cantidad++;
-      this.carro.set(id, p);
+      let c = this.carro.get(id);
+      c++;
+      this.carro.set(id, c);
     } else {
-      this.carro.set(id, {cantidad: 1, idProducto: id});
+      this.carro.set(id, 1);
     }
     console.trace(this.carro)
+  }
+
+  getCarro() {
+    const arrayCarro = [];
+
+    for(const entry of this.carro.entries()) {
+      arrayCarro.push({ 1: entry[0], 2: entry[1] });
+    }
+    return arrayCarro;
   }
 
 }
