@@ -10,39 +10,39 @@
 
 </p>
 <div class="container">
-  <div class="row border">
-    <div class="col">
+  <div class="row">
+    <div class="col-6 p-0">
       <ul class="list-group">
         <li *ngFor="let p of productos" (click) = "productoSeleccionado(p)" class="list-group-item {{ (p.id == pSeleccionado.id)? 'active' : ''}}">
-          <span> {{ p.nombre }}  </span>
+          <span> {{ p.nombre | titlecase }}  </span>
         </li>
       </ul>
     </div> <!-- .col -->
-    <div class="col">
-      <ul>
+    <div class="col-6 border">
+      <ul class="no-style">
         <li>
           <span *ngIf="pSeleccionado.gluten" class="badge badge-pill badge-warning">Con gluten</span>
           <span *ngIf="!pSeleccionado.gluten" class="badge badge-pill badge-success">Sin gluten</span>
         </li>
         <li>
-          <img src="{{ pSeleccionado.imagen }}" alt="">
+          <img width="100%" height="200px" style="object-fit: scale-down;" src="{{ pSeleccionado.imagen }}" alt="">
         </li>
         <li>
-          {{ pSeleccionado.nombre }}
+          <b>Nombre:</b> {{ pSeleccionado.nombre | titlecase }}
         </li>
         <li>
-          {{ pSeleccionado.categoria.nombre }}
+          <b>Categoria:</b> {{ pSeleccionado.categoria.nombre | titlecase}}
         </li>
         <li>
-          Historico de precios:
+          <b>Historico de precios:</b>
           <ul>
             <li *ngFor="let h of pSeleccionado.historico">
-              {{ h.fecha }} : {{ h.precio }}
+              {{ h.fecha }} : {{ h.precio }} €
             </li>
           </ul>
         </li>
         <li>
-          <button class="btn btn-primary" (click) = "anadirCarro(pSeleccionado)"></button>
+          <button class="btn btn-primary" (click) = "anadirCarro(pSeleccionado)"> Añadir al carro </button>
         </li>
       </ul>
     </div>
