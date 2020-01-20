@@ -1,0 +1,125 @@
+{
+  "colores": [
+    {
+      "id": 1,
+      "nombre": "negro",
+      "hex": "#000"
+    },
+    {
+      "id": 2,
+      "nombre": "blanco",
+      "hex": "#FFF"
+    },
+    {
+      "id": 3,
+      "nombre": "azul",
+      "hex": "#00F"
+    },
+    {
+      "id": 4,
+      "nombre": "rojo",
+      "hex": "#F00"
+    },
+    {
+      "id": 5,
+      "nombre": "verde",
+      "hex": "#0F0"
+    },
+    {
+      "nombre": "teal2",
+      "hex": "#FFFFFF",
+      "id": 6
+    }
+  ],
+  "producto": [
+    {
+      "id": 34,
+      "nombre": "cafe",
+      "imagen": "https://www.stickpng.com/assets/images/580b57fbd9996e24bc43c0f0.png",
+      "gluten": false,
+      "categoria": {
+        "id": 1,
+        "nombre": "bebidas"
+      },
+      "historico": [
+        {
+          "fecha": "17/01/2020",
+          "precio": 1.45
+        },
+        {
+          "fecha": "19/01/2020",
+          "precio": 1.4
+        },
+        {
+          "fecha": "20/01/2020",
+          "precio": 9
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "nombre": "leche",
+      "imagen": "https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c1c6.png",
+      "gluten": false,
+      "categoria": {
+        "id": 1,
+        "nombre": "bebidas"
+      },
+      "historico": [
+        {
+          "fecha": "17/01/2020",
+          "precio": 95
+        },
+        {
+          "fecha": "19/01/2020",
+          "precio": 9.4
+        },
+        {
+          "fecha": "20/01/2020",
+          "precio": 98
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "nombre": "galletas",
+      "imagen": "https://www.stickpng.com/assets/images/580b57fbd9996e24bc43c0f7.png",
+      "gluten": true,
+      "categoria": {
+        "id": 2,
+        "nombre": "desayuno"
+      },
+      "historico": [
+        {
+          "fecha": "17/01/2020",
+          "precio": 18.45
+        },
+        {
+          "fecha": "19/01/2020",
+          "precio": 17.4
+        },
+        {
+          "fecha": "20/01/2020",
+          "precio": 96
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

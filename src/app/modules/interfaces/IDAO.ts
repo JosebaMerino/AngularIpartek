@@ -1,5 +1,5 @@
 export interface IDAO<T> {
-  getAll(): List<T>;
+  getAll(): T[];
 
   getById(id: number): T;
 
