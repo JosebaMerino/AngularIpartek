@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonService {
+export class PokemonService implements IPokemonService {
 
   constructor(private http: HttpClient) {
     console.trace("PokemonService constructor");
@@ -14,5 +14,17 @@ export class PokemonService {
     const url = "https://pokeapi.co/api/v2/pokemon/1/";
     console.trace("PokemonService" + url)
     return this.http.get(url);
+  }
+
+  getAll() {
+    throw new Error("Method not implemented");
+  }
+
+  getById(id : number) {
+    throw new Error("Method not implemented");
+  }
+
+  getByName(nombre: string) {
+    throw new Error("Method not implemented");
   }
 }

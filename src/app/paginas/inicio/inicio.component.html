@@ -1,0 +1,13 @@
+
+
+<div class="card" style="width: 10rem; background-color: #ef5350;" >
+  <img class="" style="background-color: white; margin: 20px; object-fit: scale-down;" src="{{ pokemon.sprites.front_default }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ pokemon.name }}</h5>
+
+    <h6> Types </h6>
+  <span class="card-text badge badge-pill badge-primary" *ngFor="let type of pokemon.types">{{ type.type.name }} </span>
+  <br>
+    <a href="#" class="btn btn-primary d-none">Go somewhere</a>
+  </div>
+</div>

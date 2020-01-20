@@ -1,10 +1,16 @@
 <h1>Welcome to the hell</h1>
+<a [routerLink]="['/inicio']" routerLinkActive="router-link-active" class="nav-link">Inicio</a>
+<a routerLink="/inicio" routerLinkActive="active">Heroes</a>
 <h2> {{ title | uppercase }} </h2>
+
+
 
 <p>
   {{ productos | json }}
 </p>
 <app-boton></app-boton>
+
+<router-outlet></router-outlet>
 <p>
 
 </p>
