@@ -9,10 +9,12 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class InicioComponent implements OnInit {
 
   pokemon: any;
+  pokemonId: number;
 
   constructor(private pokemonService: PokemonService) {
     console.trace("Inicio component constructor");
     this.pokemon = {};
+    this.pokemonId = 1;
   } // constructor
 
   ngOnInit() {
@@ -30,4 +32,12 @@ export class InicioComponent implements OnInit {
     );
   } // ngOnInit
 
+  getPokemon() {
+    this.pokemonService.getById(this.pokemonId).subscribe(
+      data => {
+        this.pokemon = data;
+      }
+    );
+    //this.pokemon = this.pokemonService.getById(this.pokemonId);
+  }
 }

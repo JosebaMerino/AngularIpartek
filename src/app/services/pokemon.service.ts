@@ -21,7 +21,9 @@ export class PokemonService implements IPokemonService {
   }
 
   getById(id : number) {
-    throw new Error("Method not implemented");
+    const url = "https://pokeapi.co/api/v2/pokemon/" + id + "/";
+    console.trace("PokemonService" + url)
+    return this.http.get(url);
   }
 
   getByName(nombre: string) {
