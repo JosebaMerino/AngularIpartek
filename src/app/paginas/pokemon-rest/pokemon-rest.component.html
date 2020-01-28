@@ -1,13 +1,16 @@
 <div class="row">
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src='{{ pokemon.imagen }} 'alt="Card image cap">
+            <input class="form-control" type="text" [(ngModel)]="nombrePokemon">
+            <button class="btn btn-primary" (click) = "getPokemon()"> GET POKEMON</button>
+            <img class="card-img-top" src='{{ pokemon.imagen }} ' alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">{{ pokemon.id }}º {{ pokemon.nombre }}</h5>
-              <p class="card-text d-none">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
+                <h5 class="card-title">{{ pokemon.id }}º {{ pokemon.nombre }}</h5>
+                <p class="card-text d-none">
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
             </div>
-          </div>
+        </div>
     </div>
 </div>
 

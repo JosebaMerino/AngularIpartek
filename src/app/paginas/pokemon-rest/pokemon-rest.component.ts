@@ -10,6 +10,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class PokemonRestComponent implements OnInit {
 
   pokemon: Pokemon;
+  nombrePokemon: string;
 
   constructor(private pokemonService: PokemonService) {
     console.trace('constructor PokemonRestComponent');
@@ -25,18 +26,27 @@ export class PokemonRestComponent implements OnInit {
     // cuando llamamos a un Observable tenemos 3 posible metodos
     // solo 1 es obligatorio.
 
-    this.pokemonService.getPokemon(this.pokemon.nombre).subscribe(
+    this.getPokemon();
+  }
+
+  getPokemon(){
+    this.pokemonService.getPokemon(this.nombrePokemon).subscribe(
       data => {
         console.debug('peticion correcta data %o', data);
+        this.pokemon.id = data.id;
+        this.pokemon.nombre = data.name;
+        this.pokemon.imagen = data.sprites.front_default;
       },
       error => {
-        console.warn('peticion erronea data %o', error)
+        console.warn('peticion erronea data %o', error);
+        this.pokemon.id = error.status;
+        this.pokemon.nombre = error.statusText;
+        this.pokemon.imagen = 'https://www.alfabetajuega.com/wp-content/uploads/2019/08/fanart-pokeball-interior-e1566472645874.jpg';
       },
       () => {
         console.trace('esto se hace siempre')
       }
     );
-
   }
 
 }
