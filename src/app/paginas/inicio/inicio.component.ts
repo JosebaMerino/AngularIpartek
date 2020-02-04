@@ -8,36 +8,30 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class InicioComponent implements OnInit {
 
-  pokemon: any;
-  pokemonId: number;
+  titulo: string;
+  numeroClicks: number;
+  visible: boolean;
 
-  constructor(private pokemonService: PokemonService) {
-    console.trace("Inicio component constructor");
-    this.pokemon = {};
-    this.pokemonId = 1;
+  constructor() {
+    console.trace('InicioComponent constructor');
+    this.titulo = "BIENVENIDO";
+    this.numeroClicks = 0;
+    this.visible = false;
   } // constructor
 
   ngOnInit() {
-    console.trace("InicioComponent ngOnInit");
-
-    this.pokemonService.getPokemon('pikachu').subscribe(
-      data => {
-        console.debug("peticion ok, %o", data);
-        this.pokemon = data;
-      },
-      error => console.warn(error),
-      () => {
-        console.trace("peticion completa");
-      }
-    );
+    console.trace('InicioComponent ngOnInit')
   } // ngOnInit
 
-  getPokemon() {
-    this.pokemonService.getById(this.pokemonId).subscribe(
-      data => {
-        this.pokemon = data;
-      }
-    );
-    //this.pokemon = this.pokemonService.getById(this.pokemonId);
-  }
-}
+  contarClicks() {
+    console.trace(this.numeroClicks);
+
+    this.numeroClicks++;
+  } // contarClicks
+
+  decirAdios() {
+    console.trace('decirAdios');
+    this.visible = true;
+  }// decirAdios
+
+} // InicioComponent

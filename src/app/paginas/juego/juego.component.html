@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    Tu nombre <input type="text" [(ngModel)] = "jugador"> <button (click)= "jugar()"> JUGAR </button>
+    <br>
+    <h1>{{puntos}}</h1>
+    <button (click)="contar()" [disabled] = "!enJuego">Contar</button>
+  </div>
+  <div class="col">
+    <p *ngFor="let jugador of mostrarJugadores() "> {{jugador[0]}} - {{jugador[1]}}</p>
+  </div>
+</div>
+

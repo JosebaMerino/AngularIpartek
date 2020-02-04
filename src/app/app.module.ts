@@ -13,6 +13,7 @@ import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
+import { JuegoComponent } from './paginas/juego/juego.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EstilosComponent } from './paginas/estilos/estilos.component';
     ArraysComponent,
     NavbarComponent,
     PokemonRestComponent,
-    EstilosComponent
+    EstilosComponent,
+    JuegoComponent
   ],
   imports: [
     BrowserModule,
