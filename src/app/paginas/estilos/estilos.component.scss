@@ -1,0 +1,73 @@
+// Se pueden hacer comentarion en linea que en el generado no se ve
+
+// Variables
+$color_pink : rgb(218, 147, 147);
+$color_green: #00FF41;
+$color_black: #0D0208;
+h1 {
+  color: $color_pink  ;
+}
+
+p {
+  code {
+    color: $color_green;
+    background-color: $color_black;
+    padding: 2px 3px;
+  }
+}
+
+// Mixins o funciones para reutilizar
+
+@mixin redonder( $radio, $color ) {
+  border-radius: $radio;
+  border: 1px solid $color;
+  padding: 10px;
+}
+
+
+.borde10 {
+  @include redonder(10px, $color_green);
+
+}
+
+.borde50 {
+  @include redonder(50px, $color_pink);
+}
+
+/*
+Crear 3 clases para 3 botones
+1. boton
+
+* mirar hover en SCSS
+*/
+
+
+@keyframes spin {
+  100% { transform:rotateX(360deg); }
+}
+
+%boton-shared {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.boton {
+  @extend %boton-shared;
+}
+
+.boton-verde {
+  @extend %boton-shared;
+  background-color: $color_green;
+  &:hover {
+    background-color: green;
+    animation-name: spin;
+    animation-duration: 1s;
+  }
+}
+.boton-rojo {
+  @extend %boton-shared;
+  background-color: red;
+  &:hover {
+    background-color: rgb(129, 3, 3);
+  }
+}

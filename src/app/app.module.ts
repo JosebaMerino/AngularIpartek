@@ -12,6 +12,7 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
+import { EstilosComponent } from './paginas/estilos/estilos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.compon
     InicioComponent,
     ArraysComponent,
     NavbarComponent,
-    PokemonRestComponent
+    PokemonRestComponent,
+    EstilosComponent
   ],
   imports: [
     BrowserModule,
