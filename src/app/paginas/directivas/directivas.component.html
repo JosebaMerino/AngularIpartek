@@ -1,1 +1,32 @@
-<p>directivas works!</p>
+<h2>Directivas</h2>
+<a href="https://www.google.com/search?client=firefox-b-d&q=angular+io+custom+directives" target="_blank"></a>
+<p>Hay tres tipo de directivas en Angular:</p>
+<dl>
+  <dt>Componentes</dt>
+  <dd>son directivas con plantilla HTML</dd>
+  <dt>Estructurales</dt>
+  <dd>cambian el DOM añadiendo o removiendo elementos, por ejemplo *ngIf</dd>
+  <dt>Attribute directive</dt>
+  <dd>cambian la apariencia de un elemento del DOM, por ejemplo ngStyle</dd>
+
+</dl>
+<p appHello= "black"> En esta etiqueta estamos usando nuestra directiva <code> AppHello</code></p>
+<br>
+<br>
+<br>
+<div [appHello]="'blue'" > HOLA, usando corchetes espera una variable</div>
+
+
+<div>
+  <p appSubrayar="red">Lorem ipsum dolor sit.</p>
+  <p [appSubrayar]="'blue'">Necessitatibus accusamus mollitia corporis.</p>
+  <p [appSubrayar]= "colorSeleccionado">Nesciunt laborum minima omnis.</p>
+
+  <div class="border">
+    <input [(ngModel)]="colorSeleccionado" type="radio" value="red" id="rojo"> <label for="rojo">Rojo</label>
+    <br>
+    <input [(ngModel)]="colorSeleccionado" type="radio" value="green" id="verde"> <label for="verde">Verde</label>
+    <br>
+    <input [(ngModel)]="colorSeleccionado" type="radio" value="blue" id="azul"> <label for="azul">Azul</label>
+    </div>
+</div>

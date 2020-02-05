@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivasComponent implements OnInit {
 
-  constructor() { }
+  colorSeleccionado: string;
+
+  constructor() {
+    this.colorSeleccionado = 'green';
+  }
 
   ngOnInit() {
   }
