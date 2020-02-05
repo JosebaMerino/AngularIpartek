@@ -13,9 +13,12 @@ Documentacion>api
 <h3> Filtrado listas</h3>
 
 <input type="text" [(ngModel)]="busqueda">
+<select [(ngModel)]="tipo" name="tipo" id="tipo">
+  <option *ngFor="let tipoEl of tipos" value="{{tipoEl}}">{{tipoEl}}</option>
+</select>
 <ul class="list-group">
 
-  <li *ngFor="let animal of animales | animalesFiltro : busqueda" class="list-group-item">
+  <li *ngFor="let animal of animales | animalesFiltro : busqueda : tipo" class="list-group-item">
     <img class="circle" src="{{animal.Imagen}}" alt="">
     <div>
       <p class="nombre"> {{animal.Nombre | titlecase}} </p>

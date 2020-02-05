@@ -10,6 +10,7 @@ export class FiltrosComponent implements OnInit {
 
   coche: any;
   animales: Array<any>;
+  tipos: Set<string>;
 
   constructor() {
     console.trace('FiltrosComponent constructor');
@@ -20,10 +21,14 @@ export class FiltrosComponent implements OnInit {
       precio: 100000.456
     };
     this.animales = ANIMALES;
+
+    this.tipos = new Set<string>(this.animales.map((el) => el.Tipo ));
+    console.debug(this.tipos);
   }// constructor
 
   ngOnInit() {
     console.trace('FiltrosComponent ngOnInit');
+
   } // ngOnInit
 
 }// FiltrosComponent
