@@ -6,22 +6,24 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class SubrayarDirective {
 
   @Input() appSubrayar;
+  colorAnterior: string;
   constructor(private element: ElementRef) {
     console.trace('constructor SubrayarDirective');
+    this.colorAnterior = '';
   }
 
   @HostListener('mouseenter')
-  publiconMouseEnter(){
+  publiconMouseEnter() {
     console.trace('SubrayarDirective publiconMouseEnter ');
+    this.colorAnterior = this.element.nativeElement.style.color;
     this.element.nativeElement.style.color = this.appSubrayar;
     this.element.nativeElement.style.textDecoration = 'underline';
-    this.element.nativeElement.class = 'decoracion';
   } // publiconMouseEnter
 
   @HostListener('mouseleave')
-  publiconMouseLeave(){
+  publiconMouseLeave() {
     console.trace('SubrayarDirective publiconMouseLeave');
-    this.element.nativeElement.style.color = '';
+    this.element.nativeElement.style.color = this.colorAnterior;
     this.element.nativeElement.style.textDecoration = 'none';
   } // publiconMouseLeave
 

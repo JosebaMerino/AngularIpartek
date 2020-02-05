@@ -18,11 +18,13 @@
 
 
 <div>
-  <p appSubrayar="red">Lorem ipsum dolor sit.</p>
+  <p style="color: blue;" appSubrayar="red">Lorem ipsum dolor sit.</p>
   <p [appSubrayar]="'blue'">Necessitatibus accusamus mollitia corporis.</p>
   <p [appSubrayar]= "colorSeleccionado">Nesciunt laborum minima omnis.</p>
 
   <div class="border">
+    <input [(ngModel)]="colorSeleccionado" type="color" name="" id="">
+    <br>
     <input [(ngModel)]="colorSeleccionado" type="radio" value="red" id="rojo"> <label for="rojo">Rojo</label>
     <br>
     <input [(ngModel)]="colorSeleccionado" type="radio" value="green" id="verde"> <label for="verde">Verde</label>
