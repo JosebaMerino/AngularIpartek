@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  //TODO: listar los links usando una lista
+
   constructor() { }
 
   ngOnInit() {

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+const TIEMPO_JUEGO = 2000;
+const TIEMPO_EMPIECE = 1000;
+
 @Component({
   selector: 'app-juego',
   templateUrl: './juego.component.html',
@@ -10,11 +13,14 @@ export class JuegoComponent implements OnInit {
   puntos: number;
   jugador: string;
   enJuego: boolean;
+  puedeJugar: boolean;
   jugadores: Map<string, number>;
+
 
   constructor() {
     this.puntos = 0;
     this.enJuego = false;
+    this.puedeJugar = true;
     this.jugador = '';
     this.jugadores = new Map<string, number>();
     this.jugadores.set('Jugador', 2);
@@ -28,8 +34,12 @@ export class JuegoComponent implements OnInit {
   }
 
   jugar() {
-    setTimeout(() => this.enJuego = true, 1000)
-    setTimeout(() => { this.finJuego(); }, 3000);
+    this.puedeJugar = false;
+    setTimeout(() => {
+      this.enJuego = true;
+    }
+    , TIEMPO_EMPIECE);
+    setTimeout(() => { this.finJuego(); }, TIEMPO_JUEGO + TIEMPO_EMPIECE);
   }
 
   finJuego() {
@@ -37,13 +47,14 @@ export class JuegoComponent implements OnInit {
     this.jugadores.set(this.jugador, this.puntos);
 
     this.puntos = 0;
+    this.puedeJugar = true;
   }
 
   mostrarJugadores() {
     let jugadores = this.jugadores.entries();
     let jugagadores = new Array<[string, number]>();
 
-    for(const jugador of jugadores) {
+    for (const jugador of jugadores) {
       jugagadores.push(jugador);
     }
     jugagadores = jugagadores.sort((n1, n2) =>  n2[1] - n1[1]);
