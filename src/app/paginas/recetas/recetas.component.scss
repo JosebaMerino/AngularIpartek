@@ -1,0 +1,73 @@
+$primary : #a67e2b;
+
+.item-receta{
+  display: flex;
+  .receta {
+    flex-grow: 1;
+  }
+}
+
+.gluten i {
+  color: red;
+}
+
+
+.receta-detalle {
+  border: 2px solid $primary;
+  .titulo {
+    padding-left: 0.5rem;
+    color: white;
+    background-color: $primary;
+  }
+}
+
+.imagen-receta {
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  img {
+    display: inline-block;
+    object-fit: scale-down;
+    border-radius: 10px;
+  }
+  span.gluten {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.receta-titulo {
+  display: flex;
+  flex-direction: column;
+}
+
+.pie-foto {
+  display: flex;
+  justify-content: space-between;
+  .corazon {
+    color: red
+  }
+}
+
+.list-group-item.active {
+  background-color: $primary;
+  border-color: $primary;
+  .text-muted {
+    color: white !important;
+  }
+}
+
+
+.buscador {
+  display: flex;
+  flex-direction: column;
+  button {
+    border: 1px solid #ced4da;
+    background-color: #ebebeb;
+    i{
+    color: rgb(49, 49, 49);
+    }
+  }
+}

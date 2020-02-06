@@ -1,1 +1,85 @@
-<p>recetas works!</p>
+<div class="container">
+  <div class="row ">
+    <div class="col">
+      <a href="#">Cocinar nueva receta</a>
+    </div>
+    <div class="col buscador">
+      <div>
+        <b>
+          Recetas sin gluten
+        </b>
+        <input type="checkbox" name="" id="">
+      </div>
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Busca receta por nombre, cocinero o ingredientes">
+        <div class="input-group-append">
+          <button class="btn"> <i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-4">
+      <h4> Recetario </h4>
+      <ul class="list-group">
+        <li *ngFor="let recetaEl of recetas" class="list-group-item item-receta {{ recetaEl.nombre === receta.nombre? 'active' : '' }}" (click)="setReceta(recetaEl)" >
+          <div class="receta">
+            <div>
+              {{ recetaEl.nombre }}
+            </div>
+            <div class="text-muted">
+              <i>
+                {{ recetaEl.cocinero }}
+              </i>
+            </div>
+          </div> <!-- div.receta -->
+          <div [hidden]="recetaEl.isGlutenFree" class="gluten">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+
+<div class="container receta-detalle">
+  <div class="row titulo">
+    <h4> {{ receta.nombre | titlecase }} </h4>
+  </div>
+  <div class="row">
+    <div class="receta-titulo col-6 p-2">
+      <span class="imagen-receta">
+        <img class="img-thumbnail" src="{{ receta.foto }}" alt="">
+        <span [hidden]="receta.isGlutenFree" class="gluten">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span>
+      </span>
+      <div class="pie-foto">
+        <div class="corazon">
+          <i class="fas fa-heart"></i>
+          {{ receta.likes }}
+        </div>
+        <div>
+          <i>
+            By {{ receta.cocinero }}
+          </i>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 p-2">
+      <h5>Ingredientes</h5>
+      <ul class="list-group">
+        <li *ngFor="let ingrediente of receta.ingredientes" class="list-group-item">
+          {{ ingrediente | titlecase }}
+        </li>
+      </ul>
+    </div> <!--  -->
+  </div> <!-- div.row -->
+  <div class="row">
+    <div class="col">
+      {{ receta.descripcion }}
+    </div>
+  </div>
+</div> <!-- div.container -->
+    </div>
+  </div>
+</div>
