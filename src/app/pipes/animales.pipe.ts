@@ -28,5 +28,4 @@ export class AnimalesPipe implements PipeTransform {
     );
     return resultado;
   }
-
 }

@@ -1,5 +1,20 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
 <app-navbar></app-navbar>
 <main class="container pt-2">
   <!-- Es un MODULO de angular para el sistema de rutas o navegacion -->
   <router-outlet></router-outlet>
+
 </main>
+<footer class="d-flex">
+  <div class="contenedor d-flex">
+      <div>Autor: {{ globales.nombre }}</div>
+      <div>
+        <a href="{{ globales.github }}" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <div>
+        Version: {{ globales.version }}
+      </div>
+  </div>
+</footer>

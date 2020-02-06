@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RUTAS } from 'rutas';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  //TODO: listar los links usando una lista
+  rutas: Array<any>;
 
-  constructor() { }
+  constructor() {
+    console.trace('NavbarComponent constructor');
+    this.rutas = RUTAS;
+  }// constructor
 
   ngOnInit() {
   }
