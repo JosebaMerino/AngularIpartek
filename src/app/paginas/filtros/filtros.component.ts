@@ -11,6 +11,7 @@ export class FiltrosComponent implements OnInit {
   coche: any;
   animales: Array<any>;
   tipos: Set<string>;
+  tipo : string;
 
   constructor() {
     console.trace('FiltrosComponent constructor');
@@ -22,6 +23,7 @@ export class FiltrosComponent implements OnInit {
     };
     this.animales = ANIMALES;
 
+    this.tipo = 'todos';
     this.tipos = new Set<string>(this.animales.map((el) => el.Tipo ));
     console.debug(this.tipos);
   }// constructor

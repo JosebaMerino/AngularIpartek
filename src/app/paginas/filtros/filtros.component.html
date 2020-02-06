@@ -1,8 +1,8 @@
 <h2>{{'Pipes o Filtros' | uppercase}}</h2>
 Documentacion>api
 <h3>Ejemplos de filtros de Angular</h3>
-<a href="http://" target="_blank" rel="noopener noreferrer">API de filtros</a>
-<pre>{{coche | json}}</pre>
+<a href="http://" target="_blank">API de filtros</a>
+<pre class="code">{{coche | json}}</pre>
 <p>{{ coche.nombre | uppercase}}</p>
 <p>{{ coche.color | lowercase}}</p>
 <p> {{ coche.precio | currency : 'EUR' : '' }} &euro;  </p>
@@ -14,6 +14,7 @@ Documentacion>api
 
 <input type="text" [(ngModel)]="busqueda">
 <select [(ngModel)]="tipo" name="tipo" id="tipo">
+  <option value="todos"> TODOS</option>
   <option *ngFor="let tipoEl of tipos" value="{{tipoEl}}">{{tipoEl}}</option>
 </select>
 <ul class="list-group">
