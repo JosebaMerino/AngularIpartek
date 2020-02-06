@@ -8,10 +8,10 @@
         <b>
           Recetas sin gluten
         </b>
-        <input type="checkbox" name="" id="">
+        <input [(ngModel)]="sinGluten" type="checkbox" name="" id="">
       </div>
       <div class="input-group">
-        <input class="form-control" type="text" placeholder="Busca receta por nombre, cocinero o ingredientes">
+        <input [(ngModel)]="criterio" class="form-control" type="text" placeholder="Busca receta por nombre, cocinero o ingredientes">
         <div class="input-group-append">
           <button class="btn"> <i class="fas fa-search"></i></button>
         </div>
@@ -22,7 +22,7 @@
     <div class="col-4">
       <h4> Recetario </h4>
       <ul class="list-group">
-        <li *ngFor="let recetaEl of recetas" class="list-group-item item-receta {{ recetaEl.nombre === receta.nombre? 'active' : '' }}" (click)="setReceta(recetaEl)" >
+        <li *ngFor="let recetaEl of recetas | buscadorProductos : criterio : sinGluten" class="list-group-item item-receta {{ recetaEl.nombre === receta.nombre? 'active' : '' }}" (click)="setReceta(recetaEl)" >
           <div class="receta">
             <div>
               {{ recetaEl.nombre }}
