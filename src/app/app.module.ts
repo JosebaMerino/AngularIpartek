@@ -20,7 +20,7 @@ import { HelloDirective } from './directives/hello.directive';
 import { SubrayarDirective } from './directives/subrayar.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
 import { RecetasComponent } from './paginas/recetas/recetas.component';
-import { BuscadorProductosPipe } from './pipes/buscador-productos.pipe';
+import { RecetaFiltroPipe } from './pipes/receta-filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { BuscadorProductosPipe } from './pipes/buscador-productos.pipe';
     SubrayarDirective,
     AnimalesPipe,
     RecetasComponent,
-    BuscadorProductosPipe
+    RecetaFiltroPipe
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,9 @@ $primary : #a67e2b;
   .receta {
     flex-grow: 1;
   }
+  &:hover {
+    background-color: lighten($primary, 10%);
+  }
 }
 
 .gluten i {

@@ -22,7 +22,7 @@
     <div class="col-4">
       <h4> Recetario </h4>
       <ul class="list-group">
-        <li *ngFor="let recetaEl of recetas | buscadorProductos : criterio : sinGluten" class="list-group-item item-receta {{ recetaEl.nombre === receta.nombre? 'active' : '' }}" (click)="setReceta(recetaEl)" >
+        <li *ngFor="let recetaEl of recetas | recetaFiltro : criterio : sinGluten" class="list-group-item item-receta {{ recetaEl.nombre === receta.nombre? 'active' : '' }}" (click)="setReceta(recetaEl)" >
           <div class="receta">
             <div>
               {{ recetaEl.nombre }}

@@ -11,11 +11,15 @@ export class RecetasComponent implements OnInit {
 
   recetas: Array<any>;
   receta: any;
+  sinGluten: boolean;
+  criterio: string;
 
   constructor() {
     console.trace('RecetasComponent constructor');
     this.recetas = RECETAS;
     this.receta = this.recetas[2];
+    this.sinGluten = false;
+    this.criterio = '';
   } // constructor
 
   ngOnInit() {
