@@ -12,6 +12,7 @@ export class FiltrosComponent implements OnInit {
   animales: Array<any>;
   tipos: Set<string>;
   tipo : string;
+  busqueda: string;
 
   constructor() {
     console.trace('FiltrosComponent constructor');
@@ -22,6 +23,8 @@ export class FiltrosComponent implements OnInit {
       precio: 100000.456
     };
     this.animales = ANIMALES;
+
+    this.busqueda = '';
 
     this.tipo = 'todos';
     this.tipos = new Set<string>(this.animales.map((el) => el.Tipo ));

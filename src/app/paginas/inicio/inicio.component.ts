@@ -11,12 +11,16 @@ export class InicioComponent implements OnInit {
   titulo: string;
   numeroClicks: number;
   visible: boolean;
+  claseSeleccionada: string;
+  jugador: string;
 
   constructor() {
     console.trace('InicioComponent constructor');
     this.titulo = "BIENVENIDO";
     this.numeroClicks = 0;
     this.visible = false;
+    this.claseSeleccionada = '';
+    this.jugador = '';
   } // constructor
 
   ngOnInit() {
