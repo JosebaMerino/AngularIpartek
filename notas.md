@@ -1,8 +1,10 @@
 # cosas que hacer hoy
 
-[ ] Poner el nombre del autor en la ``` app.component.html en el footer``` y esa informacion irá en un  global.ts (donde guardaremos la URL del repositorio, el nombre de usuario y el numero de version )
+[ ] Nuevo proyecto
+[ ] Definir origin para push
+[ ] Desplegar proyeto en github
+[ ] Hacer la logica de negocio
 
-[ ] Un fichero con todas las rutas (global rutas.ts).
 
 
 

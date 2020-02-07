@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MyjsonService } from 'src/app/services/myjson.service';
+import { debug } from 'util';
 
 const TIEMPO_JUEGO = 2000;
 const TIEMPO_EMPIECE = 1000;
@@ -17,7 +19,7 @@ export class JuegoComponent implements OnInit {
   jugadores: Map<string, number>;
 
 
-  constructor() {
+  constructor(private myjsonService: MyjsonService) {
     this.puntos = 0;
     this.enJuego = false;
     this.puedeJugar = true;
@@ -27,6 +29,9 @@ export class JuegoComponent implements OnInit {
    } // constructor
 
   ngOnInit() {
+    this.myjsonService.getJugadores().subscribe((jugadores) => {
+      this.jugadores = jugadores;
+    });
   }
 
   contar() {
@@ -44,7 +49,20 @@ export class JuegoComponent implements OnInit {
 
   finJuego() {
     this.enJuego = false;
-    this.jugadores.set(this.jugador, this.puntos);
+
+    let jugador = {
+      nombre: this.jugador,
+      puntos: this.puntos
+    }
+
+    this.myjsonService.getJugadores().subscribe((jugadores)=> {
+      let jugadoresMAP = new Map<string,number>(jugadores);
+      debugger;
+      this.myjsonService.putJugadores(jugador, jugadoresMAP).subscribe((dato) => {
+        this.jugadores = dato;
+      });
+    })
+
 
     this.puntos = 0;
     this.puedeJugar = true;
@@ -57,7 +75,7 @@ export class JuegoComponent implements OnInit {
     for (const jugador of jugadores) {
       jugagadores.push(jugador);
     }
-    jugagadores = jugagadores.sort((n1, n2) =>  n2[1] - n1[1]);
+    jugagadores = jugagadores.sort((n1, n2) =>  n2[1][1] - n1[1][1]);
 
     return jugagadores;
   }

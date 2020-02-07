@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let coche of coches" (click) = "seleccionar(coche)">
+          {{ coche.nombre }}
+        </li>
+      </ul>
+    </div>
+    <div class="col"> {{ c1.nombre }} </div>
+    <div class="col"> {{ c2.nombre }} </div>
+  </div>
+</div>

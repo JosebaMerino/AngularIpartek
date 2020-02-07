@@ -1,3 +1,17 @@
+# Build y Subir a github pages
+[GUIA](https://angular.io/guide/deployment#deploy-to-github-pages)
+1. ```npm ng build --prod --output-path docs --base-href /AngularIpartek/```
+2. Ir a la carpeta ``` docs ```, duplicar el fichero ``` index.html ``` y cambiarle el nombre a ``` 404.html ```.
+3. Subir los cambios y listo.
+
+```
+  Si no se tiene activado para que github genere la pagina, ir a ajustes del proyecto, despues a la seccion de 'Github Pages' y elegir la opcion de usar la carpeta docs
+```
+
+# Ejercicio extra si eso
+
+Sacar u listado y cuando se hace click ir a otro componente pasando el ID y a traves del ID mostramos el detalle
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
