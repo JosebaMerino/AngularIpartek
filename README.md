@@ -1,6 +1,6 @@
 # Build y Subir a github pages
 [GUIA](https://angular.io/guide/deployment#deploy-to-github-pages)
-1. ```npm ng build --prod --output-path docs --base-href /AngularIpartek/```
+1. ``` ng build --prod --output-path docs --base-href /AngularIpartek/```
 2. Ir a la carpeta ``` docs ```, duplicar el fichero ``` index.html ``` y cambiarle el nombre a ``` 404.html ```.
 3. Subir los cambios y listo.
 

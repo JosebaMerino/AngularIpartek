@@ -57,7 +57,6 @@ export class JuegoComponent implements OnInit {
 
     this.myjsonService.getJugadores().subscribe((jugadores)=> {
       let jugadoresMAP = new Map<string,number>(jugadores);
-      debugger;
       this.myjsonService.putJugadores(jugador, jugadoresMAP).subscribe((dato) => {
         this.jugadores = dato;
       });

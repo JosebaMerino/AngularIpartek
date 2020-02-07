@@ -18,7 +18,14 @@ export class MyjsonService {
   }
 
   putJugadores( jugador: any, jugadores : Map<string, number>): Observable<any> {
-      jugadores.set(jugador.nombre, jugador.puntos);
+      if(jugadores.has(jugador.nombre)) {
+        const puntos = jugadores.get(jugador.nombre);
+        if(puntos < jugador.puntos) {
+          jugadores.set(jugador.nombre, jugador.puntos);
+        }
+      } else {
+        jugadores.set(jugador.nombre, jugador.puntos);
+      }
       const jugadoresArray = [...jugadores];
 
       return this.http.put(this.url, jugadoresArray);
