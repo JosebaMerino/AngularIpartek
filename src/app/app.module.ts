@@ -25,6 +25,7 @@ import { RecetaFiltroPipe } from './pipes/receta-filtro.pipe';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { ComparadorComponent } from './paginas/comparador/comparador.component';
+import { PruebasComponent } from './paginas/pruebas/pruebas.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ComparadorComponent } from './paginas/comparador/comparador.component';
     RecetaFiltroPipe,
     Error404Component,
     SaludarComponent,
-    ComparadorComponent
+    ComparadorComponent,
+    PruebasComponent
   ],
   imports: [
     BrowserModule,
