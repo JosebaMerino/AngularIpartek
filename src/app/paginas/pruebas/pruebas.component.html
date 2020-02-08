@@ -3,7 +3,7 @@
     Lorem ipsum dolor sit amet.
   </div>
   <div  class="lista" [hidden]="oculto">
-    <span *ngFor="let el of lista |numeroElementos : numero">{{el}}</span>
+    <span *ngFor="let el of lista |numeroElementos : numero: false">{{el}}</span>
   </div>
 </div>
 
