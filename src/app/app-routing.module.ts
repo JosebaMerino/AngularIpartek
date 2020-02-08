@@ -12,6 +12,7 @@ import { RecetasComponent } from './paginas/recetas/recetas.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { ComparadorComponent } from './paginas/comparador/comparador.component';
+import { PruebaComponent } from './componentes/prueba/prueba.component';
 
 
 /**
@@ -31,6 +32,7 @@ const routes: Routes = [
   // sirve para indicar que :pNombre es un parametro
   { path: 'saludar/:pNombre', component: SaludarComponent},
   { path: 'comparador', component: ComparadorComponent},
+  { path: 'pruebas', component: PruebaComponent},
   { path: '**', component: Error404Component}
 ];
 
@@ -39,6 +41,11 @@ export const RUTAS = [
     nombre: 'inicio',
     URL: '/',
     icono: 'fas fa-home'
+  },
+  {
+    nombre:'pruebas',
+    URL: '/pruebas',
+    icono:'fas fa-wrench'
   },
   {
     nombre: 'productos',
