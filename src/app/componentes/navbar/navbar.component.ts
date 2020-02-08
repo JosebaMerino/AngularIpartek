@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RUTAS } from 'src/app/app-routing.module';
 
-const TIME_SHOW = 400;
+const TIME_SHOW = 10;
 
 
 @Component({
@@ -44,7 +44,6 @@ export class NavbarComponent implements OnInit {
   }
   
   empezarOcultar(){
-    debugger;
     if(this.numero > 1){
       this.numero --;
       setTimeout(() => { this.empezarOcultar() }, TIME_SHOW);
