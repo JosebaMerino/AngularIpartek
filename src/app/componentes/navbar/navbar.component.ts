@@ -9,11 +9,13 @@ import { RUTAS } from 'src/app/app-routing.module';
 })
 export class NavbarComponent implements OnInit {
 
+  isNavbarCollapsed: boolean;
   rutas: Array<any>;
 
   constructor() {
     console.trace('NavbarComponent constructor');
     this.rutas = RUTAS;
+    this.isNavbarCollapsed = true;
   }// constructor
 
   ngOnInit() {

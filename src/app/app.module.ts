@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +53,7 @@ import { ComparadorComponent } from './paginas/comparador/comparador.component';
     AppRoutingModule, // Modulo para hacer el ruteo
     HttpClientModule, // Modulo para llamadas por HTTP
     FormsModule, // modulo para poder usar ngModel en los campos input
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
