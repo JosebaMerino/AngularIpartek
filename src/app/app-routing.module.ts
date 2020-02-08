@@ -13,6 +13,7 @@ import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { ComparadorComponent } from './paginas/comparador/comparador.component';
 import { PruebaComponent } from './componentes/prueba/prueba.component';
+import { PruebasComponent } from './paginas/pruebas/pruebas.component';
 
 
 /**
@@ -32,7 +33,7 @@ const routes: Routes = [
   // sirve para indicar que :pNombre es un parametro
   { path: 'saludar/:pNombre', component: SaludarComponent},
   { path: 'comparador', component: ComparadorComponent},
-  { path: 'pruebas', component: PruebaComponent},
+  { path: 'pruebas', component: PruebasComponent},
   { path: '**', component: Error404Component}
 ];
 
