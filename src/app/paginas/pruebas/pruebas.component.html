@@ -1,4 +1,32 @@
-<div>
-  <div> Lorem</div>
-  <div> picsum</div>
+<div class="main">
+  <div class="bg-dark text-white " (click)="alternarOculto()">
+    Lorem ipsum dolor sit amet.
+  </div>
+  <div  class="lista" [hidden]="oculto">
+    <span *ngFor="let el of lista |numeroElementos : numero">{{el}}</span>
+  </div>
 </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">NavBar</a>
+  <button class="navbar-toggler hidden-sm-up" type="button">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse show" id="navbarsDefault">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              Lorem, ipsum.
+          </li>
+          <li class="nav-item">
+              Lorem, ipsum.
+          </li>
+          <li class="nav-item">
+              Lorem, ipsum.
+          </li>
+          <li class="nav-item">
+              Lorem, ipsum.
+          </li>
+      </ul>
+  </div>
+</nav>

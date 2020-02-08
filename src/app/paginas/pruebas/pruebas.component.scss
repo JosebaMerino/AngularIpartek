@@ -1,0 +1,16 @@
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.main {
+  position: relative;
+}
+
+.lista {
+  span {
+    display: block;
+    border: 1px solid red;
+    animation: fadein 0.7s;
+  }
+}

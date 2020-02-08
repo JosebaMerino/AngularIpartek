@@ -26,6 +26,7 @@ import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { ComparadorComponent } from './paginas/comparador/comparador.component';
 import { PruebasComponent } from './paginas/pruebas/pruebas.component';
+import { NumeroElementosPipe } from './pipes/numero-elementos.pipe';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PruebasComponent } from './paginas/pruebas/pruebas.component';
     Error404Component,
     SaludarComponent,
     ComparadorComponent,
-    PruebasComponent
+    PruebasComponent,
+    NumeroElementosPipe
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">NavBar</a>
     <button class="navbar-toggler hidden-sm-up" type="button"
-        (click)="isNavbarCollapsed = !isNavbarCollapsed"
+        (click)="alternarOculto()"
         data-target="#navbarsDefault"
         aria-controls="navbarsDefault"
         aria-expanded="false"
@@ -12,7 +12,7 @@
 
     <div [ngbCollapse] = "isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
         <ul class="navbar-nav mr-auto">
-            <li *ngFor="let ruta of rutas" class="nav-item">
+            <li *ngFor="let ruta of rutas | numeroElementos : numero : isNavbarCollapsed" class="nav-item face-in">
                 <a [routerLink]="ruta.URL" routerLinkActive="active" class="nav-link">
                     <i [class]="ruta.icono"></i>
                     {{ ruta.nombre | titlecase}}
