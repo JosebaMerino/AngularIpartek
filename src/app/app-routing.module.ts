@@ -14,6 +14,7 @@ import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { ComparadorComponent } from './paginas/comparador/comparador.component';
 import { PruebaComponent } from './componentes/prueba/prueba.component';
 import { PruebasComponent } from './paginas/pruebas/pruebas.component';
+import { TareasComponent } from './paginas/tareas/tareas.component';
 
 
 /**
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'saludar/:pNombre', component: SaludarComponent},
   { path: 'comparador', component: ComparadorComponent},
   { path: 'pruebas', component: PruebasComponent},
+  { path: 'tareas', component: TareasComponent },
   { path: '**', component: Error404Component}
 ];
 
@@ -44,9 +46,9 @@ export const RUTAS = [
     icono: 'fas fa-home'
   },
   {
-    nombre:'pruebas',
+    nombre: 'pruebas',
     URL: '/pruebas',
-    icono:'fas fa-wrench'
+    icono: 'fas fa-wrench'
   },
   {
     nombre: 'productos',
@@ -88,6 +90,11 @@ export const RUTAS = [
     URL: '/recetas',
     icono: 'fas fa-utensils'
   },
+  {
+    nombre: 'tareas',
+    URL: '/tareas',
+    icono: 'far fa-check-square'
+  }
 
 ];
 

@@ -7,16 +7,18 @@ import { IPokemonService } from './Ipokemon.service';
   providedIn: 'root'
 })
 export class PokemonService implements IPokemonService {
-  
+
+
+  constructor(private http: HttpClient) {
+    console.trace('PokemonService constructor');
+  }
+
   getHabilidad(nombre: string): Observable<any> {
     const url = `https://pokeapi.co/api/v2/ability/${nombre.toLowerCase()}`;
     console.trace('PokemonService' + url)
     return this.http.get(url);
   }
 
-  constructor(private http: HttpClient) {
-    console.trace('PokemonService constructor');
-  }
 
   getPokemon(nombre: string): Observable<any> {
     const url = `https://pokeapi.co/api/v2/pokemon/${nombre.toLowerCase()}`;

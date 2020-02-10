@@ -27,6 +27,7 @@ import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { ComparadorComponent } from './paginas/comparador/comparador.component';
 import { PruebasComponent } from './paginas/pruebas/pruebas.component';
 import { NumeroElementosPipe } from './pipes/numero-elementos.pipe';
+import { TareasComponent } from './paginas/tareas/tareas.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { NumeroElementosPipe } from './pipes/numero-elementos.pipe';
     SaludarComponent,
     ComparadorComponent,
     PruebasComponent,
-    NumeroElementosPipe
+    NumeroElementosPipe,
+    TareasComponent
   ],
   imports: [
     BrowserModule,
