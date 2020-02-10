@@ -1,4 +1,29 @@
+<!-- https://www.lavanguardia.com/r/GODO/LV/p6/WebSite/2019/08/26/Recortada/img_mrius_20190826-141857_imagenes_lv_terceros_procrastinar_1-kp3F-U464261375072SwH-992x558@LaVanguardia-Web.jpg -->
 <h2> Tareas </h2>
-<p> Ejemplo de Provaider o Servicio para hacer un CRUD, completo contra un servicio REST </p>
+<p> Ejemplo de Provider o Servicio para hacer un CRUD, completo contra un servicio REST </p>
 
-{{ tareas | json }}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 card p-3" style="background-color: rgba(128, 128, 128, 0.075);">
+
+      <div class="input-group mb-4">
+        <input class="form-control" type="text" [(ngModel)]="nuevaTarea">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="crearTarea(nuevaTarea)"> Crear </button>
+        </div>
+      </div>
+
+      <ul>
+        <li *ngFor="let tarea of tareas">
+          <input type="checkbox" [checked]="tarea.completada" (click)="editarEstado(tarea)">
+          <b>{{ tarea.id }}</b>
+          <span class="titulo {{(tarea.completada)? 'completada': ''}}">
+            {{ tarea.titulo }}
+          </span>
+          <button (click)="borrarTarea(tarea)" class="btn btn-danger"> Borrar </button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
