@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+
 li {
   .titulo {
     font-weight: 500;
@@ -7,4 +10,21 @@ li {
     text-decoration: line-through;
     color: rgb(119, 119, 119);
   }
+}
+
+.red {
+  color: theme-color("danger");
+}
+
+.contenedor {
+  background-image: url('https://www.lavanguardia.com/r/GODO/LV/p6/WebSite/2019/08/26/Recortada/img_mrius_20190826-141857_imagenes_lv_terceros_procrastinar_1-kp3F-U464261375072SwH-992x558@LaVanguardia-Web.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.tarea {
+  display: flex;
+  align-items: center ;
 }

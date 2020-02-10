@@ -12,11 +12,16 @@ export class TareasComponent implements OnInit {
 
   tareas: Array<Tarea>;
   nuevaTarea: string;
+  alerta: Alerta;
 
   constructor(private servicioTarea: TareasService) {
     console.trace('TareasComponent constructor');
     this.tareas = []; // Inicializar el array
     this.nuevaTarea = '';
+    this.alerta = {
+      mostrar: false,
+      mensaje: ''
+    };
   } // constructor
 
   ngOnInit() {
@@ -27,11 +32,12 @@ export class TareasComponent implements OnInit {
   } // ngOnInit
   editarEstado(tarea: Tarea) {
     console.debug('Click %o', tarea);
-    tarea.completada = !tarea.completada;
 
     this.servicioTarea.modificar(tarea).subscribe(
-      () => {
+      (dato) => {
         this.cargarTareas();
+
+        this.mostrarAlerta(`Editada tarea "${dato.titulo}" correctamente`);
       }
     );
   }// editarEstado
@@ -60,6 +66,8 @@ export class TareasComponent implements OnInit {
         () => {
           console.trace('Borrada tarea');
           this.cargarTareas();
+
+          this.mostrarAlerta(`Se ha borrado la tarea con ID ${tarea.id} y titulo "${tarea.titulo}" correctamente`);
         }
       );
     } else {
@@ -70,17 +78,38 @@ export class TareasComponent implements OnInit {
   crearTarea(nuevaTarea) {
 
     console.debug('Crear nueva tarea: %s', nuevaTarea);
-    const tarea: Tarea = new Tarea();
-    tarea.titulo = nuevaTarea;
-    this.servicioTarea.crear(tarea).subscribe(
-      dato => {
-        console.trace('Tarea creada %o', dato);
-        this.cargarTareas();
-        this.nuevaTarea = '';
-      }
-    );
+    if(nuevaTarea.length > 1){
+      const tarea: Tarea = new Tarea();
+      tarea.titulo = nuevaTarea;
+      this.servicioTarea.crear(tarea).subscribe(
+        dato => {
+          console.trace('Tarea creada %o', dato);
+          this.cargarTareas();
+
+          this.mostrarAlerta(`Se ha creado la tarea "${this.nuevaTarea}" correctamente`);
+
+          this.nuevaTarea = '';
+        }
+      );
+    } else {
+      this.mostrarAlerta('El nombre de la tarea es muy corto');
+    }
   }// crearTarea
 
+  mostrarAlerta(mensaje: string) {
+    this.alerta.mensaje = mensaje;
+    this.alerta.mostrar = true;
 
+    setTimeout(() => {this.alerta.mostrar = false;}, this.alerta.mensaje.length * 500 );
+  }
 
+  modificarTarea(tarea: Tarea) {
+    tarea.editar = false;
+  }
+
+}
+
+class Alerta {
+  mostrar: boolean;
+  mensaje: string;
 }
