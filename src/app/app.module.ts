@@ -30,6 +30,7 @@ import { NumeroElementosPipe } from './pipes/numero-elementos.pipe';
 import { TareasComponent } from './paginas/tareas/tareas.component';
 import { AutoGrowDirective } from './directives/auto-grow.directive';
 import { PrivadoComponent } from './paginas/privado/privado.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { PrivadoComponent } from './paginas/privado/privado.component';
     NumeroElementosPipe,
     TareasComponent,
     AutoGrowDirective,
-    PrivadoComponent
+    PrivadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

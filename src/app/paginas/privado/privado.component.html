@@ -2,3 +2,14 @@
 
 <p> Solo pueden acceder usuarios logeados </p>
 <p> Para proteger el acceso a esta ruta debemos usar una guarda (GUARD) y definirla en routing.</p>
+
+
+<code> path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard]</code>
+
+
+<dl>
+  <dt>canActivate</dt>
+  <dd>Guarda para indicar si se puede activar esa ruta</dd>
+  <dt>LoginGuard</dt>
+  <dd>Guarda creada por nosotros que retornara true o false</dd>
+</dl>

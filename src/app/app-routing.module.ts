@@ -16,6 +16,8 @@ import { PruebaComponent } from './componentes/prueba/prueba.component';
 import { PruebasComponent } from './paginas/pruebas/pruebas.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
 import { PrivadoComponent } from './paginas/privado/privado.component';
+import { LoginGuard } from './guards/login.guard';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 /**
@@ -38,7 +40,8 @@ const routes: Routes = [
   { path: 'pruebas', component: PruebasComponent},
   { path: 'tareas', component: TareasComponent },
   // vamos ha proteger esta ruta con una guarda
-  { path: 'privado', component: PrivadoComponent},
+  { path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard]},
+  { path: 'login', component: LoginComponent },
   { path: '**', component: Error404Component}
 ];
 
@@ -102,6 +105,11 @@ export const RUTAS = [
     nombre: 'privado',
     URL: '/privado',
     icono: 'fas fa-user-shield'
+  },
+  {
+    nombre: 'Iniciar sesion',
+    URL: '/login',
+    icono: 'fas fa-user'
   }
 
 ];
