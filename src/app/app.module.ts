@@ -31,6 +31,7 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
 import { AutoGrowDirective } from './directives/auto-grow.directive';
 import { PrivadoComponent } from './paginas/privado/privado.component';
 import { LoginComponent } from './paginas/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,8 +65,9 @@ import { LoginComponent } from './paginas/login/login.component';
     BrowserModule,
     AppRoutingModule, // Modulo para hacer el ruteo
     HttpClientModule, // Modulo para llamadas por HTTP
-    FormsModule, // modulo para poder usar ngModel en los campos input
+    FormsModule, // modulo para poder usar ngModel en los campos input (banana in a box)
     NgbModule,
+    ReactiveFormsModule, // Para los formularios reactivos
   ],
   providers: [],
   bootstrap: [AppComponent]

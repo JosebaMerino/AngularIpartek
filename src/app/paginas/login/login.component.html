@@ -1,1 +1,35 @@
-<p>login works!</p>
+<h1>Iniciar sesion</h1>
+<h2> Formulario reactivo </h2>
+
+<div class="alert-danger p-4" >
+  Acordase de importar <code>ReactiveFormsModule</code>
+</div>
+
+<div class="row mt-3">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+
+        <h4 class="text-center">Login</h4>
+        <form [formGroup]="formulario" (ngSubmit)="enviar(formulario.value)">
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+            <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.dirty">
+              Minimo 6 caracteres, maximo 8
+            </small>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+          </div>
+          <input class="btn btn-primary btn-block" type="submit" [disabled]="formulario.invalid" value="Enviar">
+
+        </form>
+      </div> <!-- .card-body -->
+    </div><!-- .card -->
+  </div> <!-- .col 1 -->
+  <div class="col">
+    <pre class="">{{ formulario.value | json }}</pre>
+    <pre>{{ formulario.status | json }}</pre>
+  </div> <!-- .col 2 -->
+</div>
+

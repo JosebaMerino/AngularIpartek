@@ -1,0 +1,8 @@
+pre {
+  background-color: black;
+  color: lighten($color: green, $amount: 20%);
+}
+
+input[type="text"].ng-dirty.ng-invalid, input[type="password"].ng-dirty.ng-invalid {
+  border: 1px solid red;
+}
