@@ -27,11 +27,10 @@
           <div>
             <b>{{ tarea.id }}</b>
           </div>
-          <div class="titulo {{(tarea.completada)? 'completada': ''}} flex-grow-1">
-          <textarea rows="0" (blur)="modificarTarea(tarea)" [(ngModel)]="tarea.titulo" class="form-control" type="text" name="" id="">
-            </textarea>
 
-          </div>
+          <span contenteditable="true" [textContent]="tarea.titulo" (input)="tarea.titulo=$event.target.textContent">
+          </span>
+
           <button (click)="borrarTarea(tarea)" class="btn danger"> <i class="fas fa-trash red"></i> </button>
         </li>
       </ul>

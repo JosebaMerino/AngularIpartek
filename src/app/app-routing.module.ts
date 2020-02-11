@@ -15,6 +15,7 @@ import { ComparadorComponent } from './paginas/comparador/comparador.component';
 import { PruebaComponent } from './componentes/prueba/prueba.component';
 import { PruebasComponent } from './paginas/pruebas/pruebas.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { PrivadoComponent } from './paginas/privado/privado.component';
 
 
 /**
@@ -36,6 +37,8 @@ const routes: Routes = [
   { path: 'comparador', component: ComparadorComponent},
   { path: 'pruebas', component: PruebasComponent},
   { path: 'tareas', component: TareasComponent },
+  // vamos ha proteger esta ruta con una guarda
+  { path: 'privado', component: PrivadoComponent},
   { path: '**', component: Error404Component}
 ];
 
@@ -94,6 +97,11 @@ export const RUTAS = [
     nombre: 'tareas',
     URL: '/tareas',
     icono: 'far fa-check-square'
+  },
+  {
+    nombre: 'privado',
+    URL: '/privado',
+    icono: 'fas fa-user-shield'
   }
 
 ];

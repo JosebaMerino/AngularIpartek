@@ -2,6 +2,9 @@
 
 
 li {
+  &:hover{
+    background-color: darken(#ffffff, 5%) ;
+  }
   .titulo {
     font-weight: 500;
   }
@@ -27,4 +30,8 @@ li {
 .tarea {
   display: flex;
   align-items: center ;
+  span {
+    flex-grow: 1;
+  }
 }
+

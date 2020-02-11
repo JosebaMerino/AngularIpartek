@@ -100,13 +100,8 @@ export class TareasComponent implements OnInit {
     this.alerta.mensaje = mensaje;
     this.alerta.mostrar = true;
 
-    setTimeout(() => {this.alerta.mostrar = false;}, this.alerta.mensaje.length * 500 );
+    setTimeout(() => {this.alerta.mostrar = false; }, this.alerta.mensaje.length * 500 );
   }
-
-  modificarTarea(tarea: Tarea) {
-    tarea.editar = false;
-  }
-
 }
 
 class Alerta {

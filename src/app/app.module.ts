@@ -28,6 +28,8 @@ import { ComparadorComponent } from './paginas/comparador/comparador.component';
 import { PruebasComponent } from './paginas/pruebas/pruebas.component';
 import { NumeroElementosPipe } from './pipes/numero-elementos.pipe';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { AutoGrowDirective } from './directives/auto-grow.directive';
+import { PrivadoComponent } from './paginas/privado/privado.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
     ComparadorComponent,
     PruebasComponent,
     NumeroElementosPipe,
-    TareasComponent
+    TareasComponent,
+    AutoGrowDirective,
+    PrivadoComponent
   ],
   imports: [
     BrowserModule,
