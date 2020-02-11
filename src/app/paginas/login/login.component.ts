@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
   } // ngOnInit
 
   enviar(values: any) {
-    console.trace('enviar formulario %o', values)
+    console.trace('enviar formulario %o', values);
+
   } // enviar
 
 }// LoginComponent

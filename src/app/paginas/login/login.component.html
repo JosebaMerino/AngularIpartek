@@ -14,6 +14,12 @@
         <form [formGroup]="formulario" (ngSubmit)="enviar(formulario.value)">
           <div class="form-group">
             <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+            <div [hidden]="!(formulario.controls.nombre.invalid && formulario.controls.nombre.dirty)">
+              <small *ngIf="formulario.controls.nombre.errors.minlength">
+                La longitud minima tiene que ser {{ formulario.controls.nombre.errors.minlength.requiredLength }}
+              </small>
+            </div>
+
             <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.dirty">
               Minimo 6 caracteres, maximo 8
             </small>
@@ -27,9 +33,19 @@
       </div> <!-- .card-body -->
     </div><!-- .card -->
   </div> <!-- .col 1 -->
-  <div class="col">
+  <div class="col" class="negro">
     <pre class="">{{ formulario.value | json }}</pre>
     <pre>{{ formulario.status | json }}</pre>
+    <h3>FormControl para <b>password</b></h3>
+    <a href="https://angular.io/api/forms/FormControl" target="_blank">Documentacion</a>
+
+    <pre>valid: {{ formulario.controls.password.valid | json }}</pre>
+    <pre>invalid: {{ formulario.controls.password.invalid | json }}</pre>
+    <pre>dirty: {{ formulario.controls.password.dirty | json }}</pre>
+    <pre>pristine: {{ formulario.controls.password.pristine | json }}</pre>
+    <pre>touched: {{ formulario.controls.password.touched | json }}</pre>
+    <pre>untouched: {{ formulario.controls.password.untouched | json }}</pre>
+    <pre>Errors: {{ formulario.controls.password.errors | json }}</pre>
   </div> <!-- .col 2 -->
 </div>
 
