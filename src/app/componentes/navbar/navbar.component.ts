@@ -59,7 +59,9 @@ export class NavbarComponent implements OnInit {
     console.trace('NavbarComponent click boton cerrar sesion');
 
     const mensaje = '¿Estas seguro de que quieres salir?';
-    this.usuarioService.cerrarSesion(99);
-    this.router.navigate(['login']);
+    if(confirm(mensaje)){
+      this.usuarioService.cerrarSesion(99);
+      this.router.navigate(['login']);
+    }
   }
 }
