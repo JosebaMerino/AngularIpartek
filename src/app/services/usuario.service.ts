@@ -25,6 +25,8 @@ export class UsuarioService implements IUsuarioService {
 
     let usuarioBuscar: Usuario; // si no entra en el if sera undefined
 
+    console.debug('"%s" "%s" -- "%s" "%s"', NOMBRE, PASS, nombre, password);
+
     if (NOMBRE === nombre && PASS === password) {
       // Crear usuario y rellenar datos.
       usuarioBuscar = new Usuario();

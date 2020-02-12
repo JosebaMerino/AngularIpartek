@@ -100,16 +100,6 @@ export const RUTAS = [
     nombre: 'tareas',
     URL: '/tareas',
     icono: 'far fa-check-square'
-  },
-  {
-    nombre: 'privado',
-    URL: '/privado',
-    icono: 'fas fa-user-shield'
-  },
-  {
-    nombre: 'Iniciar sesion',
-    URL: '/login',
-    icono: 'fas fa-user'
   }
 
 ];

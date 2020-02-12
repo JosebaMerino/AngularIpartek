@@ -21,9 +21,14 @@ export class LoginComponent implements OnInit {
     // Construir formulario
     this.formulario = this.builder.group({
       // definir los FormControl que son los inputs [value, [validaciones...] ]
+      nombre: [''],
+      password  : ['']
+    });
+
+    /* Quitamos validaciones
       nombre: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100)]],
       password  : ['', [Validators.required, Validators.minLength(8), Validators.maxLength(100)]]
-    });
+    */
 
   } // constructor
 

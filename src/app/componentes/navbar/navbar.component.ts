@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RUTAS } from 'src/app/app-routing.module';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
 
 const TIME_SHOW = 10;
 
@@ -15,7 +17,7 @@ export class NavbarComponent implements OnInit {
   numero: number;
   rutas: Array<any>;
 
-  constructor() {
+  constructor(public usuarioService: UsuarioService, private router: Router) {
     console.trace('NavbarComponent constructor');
     this.rutas = RUTAS;
     this.isNavbarCollapsed = true;
@@ -42,7 +44,7 @@ export class NavbarComponent implements OnInit {
       this.numero++;
     }
   }
-  
+
   empezarOcultar(){
     if(this.numero > 1){
       this.numero --;
@@ -51,5 +53,13 @@ export class NavbarComponent implements OnInit {
       this.numero--;
       this.isNavbarCollapsed = true;
     }
+  }
+
+  salir() {
+    console.trace('NavbarComponent click boton cerrar sesion');
+
+    const mensaje = '¿Estas seguro de que quieres salir?';
+    this.usuarioService.cerrarSesion(99);
+    this.router.navigate(['login']);
   }
 }
