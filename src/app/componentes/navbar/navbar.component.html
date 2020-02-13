@@ -13,7 +13,7 @@
     <div [ngbCollapse] = "isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
         <ul class="navbar-nav mr-auto">
             <li *ngFor="let ruta of rutas | numeroElementos : numero : isNavbarCollapsed" class="nav-item face-in">
-                <a [routerLink]="ruta.URL" routerLinkActive="active" class="nav-link">
+                <a [routerLink]="ruta.URL" routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exact: true}">
                     <i [class]="ruta.icono"></i>
                     {{ ruta.nombre | titlecase}}
                 </a>
