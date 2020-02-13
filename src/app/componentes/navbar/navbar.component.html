@@ -18,13 +18,13 @@
                     {{ ruta.nombre | titlecase}}
                 </a>
             </li>
-            <li class="nav-item" *ngIf="!usuarioService.estaLogeado()">
+            <li class="nav-item" *ngIf="!isLogged">
               <a [routerLink]="['/login']" class="nav-link"> Iniciar sesion</a>
             </li>
-            <li class="nav-item" *ngIf="usuarioService.estaLogeado()">
+            <li class="nav-item" *ngIf="isLogged">
               <a [routerLink]="['/privado']" class="nav-link"> Privado </a>
             </li>
-            <li class="nav-item" *ngIf="usuarioService.estaLogeado()">
+            <li class="nav-item" *ngIf="isLogged">
               <button (click)="salir()" class="btn btn-link nav-link"> Cerrar sesion</button>
             </li>
         </ul>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RUTAS } from 'src/app/app-routing.module';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 const TIME_SHOW = 10;
 
@@ -17,14 +17,27 @@ export class NavbarComponent implements OnInit {
   numero: number;
   rutas: Array<any>;
 
+  isLogged: boolean;
+
   constructor(public usuarioService: UsuarioService, private router: Router) {
     console.trace('NavbarComponent constructor');
     this.rutas = RUTAS;
     this.isNavbarCollapsed = true;
     this.numero = 0;
+
+    this.isLogged = false;
   }// constructor
 
   ngOnInit() {
+    //this.isLogged = this.usuarioService.estaLogeado();
+
+    // Cada vez que cambia la URL actualiza la session (solucion no muy buena)
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.isLogged = this.usuarioService.estaLogeado();
+      }
+
+    });
   }
 
   alternarOculto() {

@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { IUsuarioService } from './IUsuario.service';
 import { Usuario } from '../model/usuario';
+
+const KEY_ISLOGGED = 'isLogged';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsuarioService implements IUsuarioService {
-  private isLogged: boolean;
   private usuario: Usuario;
 
+  private storage: Storage;
+
   constructor() {
-    this.isLogged = false;
     this.usuario = undefined;
     console.trace('constructor UsuarioService');
+    this.storage = window.sessionStorage;
   } // constructor
 
   estaLogeado(): boolean {
-    return this.isLogged;
+    return !!this.storage.getItem(KEY_ISLOGGED);
   }// estaLogeado
 
   login(nombre: string, password: string): Usuario {
@@ -33,15 +38,15 @@ export class UsuarioService implements IUsuarioService {
       usuarioBuscar.nombre = nombre;
       usuarioBuscar.password = password;
       usuarioBuscar.id = 99;
-      this.isLogged = true; // marcar que esta logeado
+      this.storage.setItem(KEY_ISLOGGED, JSON.stringify(usuarioBuscar)); // marcar que esta logeado
     } else {
-      this.isLogged = false;
+      this.storage.removeItem(KEY_ISLOGGED); // marcar que no esta logeado
     }
 
     return usuarioBuscar;
   } // login
 
   cerrarSesion(idUsuario: number) {
-    this.isLogged = false;
+    this.storage.removeItem(KEY_ISLOGGED);
   } // cerrarSesion
 }
