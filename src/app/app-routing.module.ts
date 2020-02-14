@@ -18,6 +18,7 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
 import { PrivadoComponent } from './paginas/privado/privado.component';
 import { LoginGuard } from './guards/login.guard';
 import { LoginComponent } from './paginas/login/login.component';
+import { ComprasComponent } from './paginas/compras/compras.component';
 
 
 /**
@@ -42,6 +43,7 @@ const routes: Routes = [
   // vamos ha proteger esta ruta con una guarda
   { path: 'privado', component: PrivadoComponent, canActivate: [LoginGuard]},
   { path: 'login', component: LoginComponent },
+  { path: 'componentes', component: ComprasComponent},
   { path: '**', component: Error404Component}
 ];
 
@@ -50,6 +52,10 @@ export const RUTAS = [
     nombre: 'inicio',
     URL: '/',
     icono: 'fas fa-home'
+  },
+  {
+    nombre: 'InputOutput',
+    URL: '/componentes',
   },
   {
     nombre: 'pruebas',

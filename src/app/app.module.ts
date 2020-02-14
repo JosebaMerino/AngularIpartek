@@ -32,6 +32,9 @@ import { AutoGrowDirective } from './directives/auto-grow.directive';
 import { PrivadoComponent } from './paginas/privado/privado.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ComprasComponent } from './paginas/compras/compras.component';
+import { ListadoComponent } from './paginas/compras/listado/listado.component';
+import { DetalleComponent } from './paginas/compras/detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     TareasComponent,
     AutoGrowDirective,
     PrivadoComponent,
-    LoginComponent
+    LoginComponent,
+    ComprasComponent,
+    ListadoComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,

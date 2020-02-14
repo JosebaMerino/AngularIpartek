@@ -13,7 +13,7 @@
         <h4 class="text-center">Login</h4>
         <form [formGroup]="formulario" (ngSubmit)="enviar(formulario.value)">
           <div class="form-group">
-            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+            <input type="text" class="form-control"   ="nombre" placeholder="Nombre">
             <div  *ngIf="(formulario.controls.nombre.invalid && formulario.controls.nombre.dirty)">
               <small *ngIf="formulario.controls.nombre.errors.minlength">
                 La longitud minima tiene que ser {{ formulario.controls.nombre.errors.minlength.requiredLength }}
