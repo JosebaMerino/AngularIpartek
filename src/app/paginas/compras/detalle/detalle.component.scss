@@ -1,0 +1,17 @@
+.inactive {
+
+  h5 {
+    color: #DDD;
+    transition: 2s;
+  }
+  img {
+    filter: grayscale(100%);
+    opacity: 0.2;
+    transition: 2s;
+  }
+
+  p {
+    color: #DDD;
+    transition: 2s;
+  }
+}

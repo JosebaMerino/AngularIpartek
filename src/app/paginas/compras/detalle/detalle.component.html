@@ -1,1 +1,10 @@
-<p>detalle works!</p>
+<div class="card {{ (fruta.nombre === '')? 'inactive' : '' }}" style="width: 18rem;">
+  <img class="card-img-top" src="{{ fruta.imagen }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ fruta.nombre }} </h5>
+    <p class="card-text">Fruta : {{ fruta.precio }} </p>
+    <a href="#" class="btn btn-outline-primary btn-block text-center">Comprar</a>
+  </div>
+</div>
+
+<button (click)="(fruta.nombre === '')? fruta.nombre = 'naranja' : fruta.nombre = ''"> CAMBIA</button>

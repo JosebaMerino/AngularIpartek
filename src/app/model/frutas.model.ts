@@ -7,9 +7,9 @@ export class Fruta {
   precio: number;
   colores: Array<Color>;
 
-  constructor() {
+  constructor(nombre?: string) {
     this.id = 0;
-    this.nombre = '';
+    this.nombre = (nombre) ? nombre : '';
     this.precio = 0;
     this.colores = new Array<Color>();
     this.imagen = 'assets/images/frutas.jpg';
